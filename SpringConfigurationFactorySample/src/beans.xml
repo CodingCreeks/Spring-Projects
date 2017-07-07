@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="emp" class="com.online.spring.core.Employee">
+		<property name="empid" value="1000" />
+		<property name="empname" value="Kumar" />
+	</bean>
+
+	<bean id="emp1" class="com.online.spring.core.Employee">
+		<property name="empid" value="1001" />
+		<property name="empname" value="Priya" />
+	</bean>
+
+	<bean id="emp2" class="com.online.spring.core.Employee">
+		<property name="empid" value="1002" />
+		<property name="empname" value="Vivek" />
+	</bean>
+
+	<bean id="cmp" class="com.online.spring.core.Company">
+		<property name="cno" value="1234" />
+		<property name="cname" value="ABC Company" />
+		<property name="employee" ref="emp" />
+	</bean>
+
+	<bean id="cmp1" class="com.online.spring.core.Company">
+		<property name="cname" value="ABC Company" />
+		<property name="employee" ref="emp" />
+	</bean>
+
+	<bean id="listofcmp" class="com.online.spring.core.Company">
+		<property name="cmplist">
+			<list>
+				<value>Heliossol Inc</value>
+				<value>World trade Center</value>
+
+			</list>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="one" value-ref="emp" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="setofemp" class="com.online.spring.core.Employee">
+		<property name="empset">
+			<set>
+				<ref bean="emp" />
+				<ref bean="emp1" />
+				<ref bean="emp2" />
+
+			</set>
+		</property>
+	</bean>
+</beans>

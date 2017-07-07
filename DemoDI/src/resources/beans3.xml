@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--DI by reference -->
+
+	<bean name="user4" class="com.codingKnowledge.entities.UserModel"
+		p:no="103" p:name="Kumar" p:email="Kumar@test.com" p:address-ref="addr" />
+	<bean id="addr" class="com.codingKnowledge.entities.UserAddress"
+		p:city="Banglore" p:country="India" />
+
+	<!--DI AutoWire by-"byType" -->
+
+	<bean name="user5" class="com.codingKnowledge.entities.User" p:no="103"
+		p:name="Kumar" p:email="Kumar@test.com" autowire="byType" />
+
+	<bean id="addr1" class="com.codingKnowledge.entities.Address"
+		p:city="Paris" p:state="Paris" p:country="France" />
+
+	<bean id="addr2" class="com.codingKnowledge.entities.Address" p:city="Atlanta" p:state="Gerogia"
+		p:country="USA" autowire-candidate="false" />
+
+	<!--DI AutoWire by-"byName" -->
+
+	<bean name="user6" class="com.codingKnowledge.entities.User" p:no="104"
+		p:name="Vivek" p:email="vivek@test.com" autowire="byName" />
+
+	<bean id="address" class="com.codingKnowledge.entities.Address"
+		p:city="Chennai" p:country="India" />
+
+	<!--Constructor Type NameSpace is not working for 2 parameter Constructor -->
+
+	<!-- <bean name="user4" class="beans.UserModel" c:no="103" c:name="Kumar" 
+		c:email="Kumar@test.com" c:address-ref="addr" /> <bean id="addr" class="beans.UserAddress" 
+		c:city="Atlanta" c:country="USA" /> -->
+</beans>    

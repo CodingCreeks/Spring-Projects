@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!--To Enable the Annotation @Required we need to Instantiate the class 
+		"RequiredAnnotationBeanPostProcessor" -->
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+
+	<bean id="addr" class="com.codingKnowledge.entities.UserAddress"
+		depends-on="">
+		<constructor-arg value="MPH" />
+		<constructor-arg value="India" />
+	</bean>
+
+	<bean id="user1" class="com.codingKnowledge.entities.UserModel"
+		depends-on="">
+		<property name="email" value="abc@gmail.com" />
+		<constructor-arg value="100" />
+		<constructor-arg value="abc@gmail.com" />
+		<constructor-arg value="ABC" />
+		<constructor-arg ref="addr" />
+	</bean>
+
+	<bean id="user2" class="com.codingKnowledge.entities.UserModel">
+		<property name="no" value="101" />
+		<property name="email" value="xyz@gmail.com" />
+		<property name="name">
+			<value>xyz</value>
+		</property>
+		<property name="address" ref="addr" />
+	</bean>
+
+	<bean id="user3" class="com.codingKnowledge.entities.UserModel">
+		<property name="email" value="pqr@gmail.com" />
+		<constructor-arg value="102" index="0" />
+		<constructor-arg value="pqr@gmail.com" index="2" />
+		<constructor-arg value="pqr" index="1" />
+		<constructor-arg ref="addr" />
+	</bean>
+</beans>

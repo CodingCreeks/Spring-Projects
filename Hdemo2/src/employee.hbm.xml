@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.online.hib.model.Employee" table="employee">
+		<id name="eno" length="11" column="Employee_Number">
+			<generator class="increment"></generator>
+		</id>
+		<property name="fname" length="15" column="First_Name"/>
+		<property name="lname" length="15" column="Last_Name"/>
+	</class>
+</hibernate-mapping>

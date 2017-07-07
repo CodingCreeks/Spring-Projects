@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.online.spring.web.model.Customer" table="customer">
+		<id name="customerId" length="11" column="Customer_ID">
+			<generator class="increment"></generator>
+		</id>
+		<property name="customerfname" length="15" column="Customer_FirstName" />
+		<property name="customerlname" length="15" column="Customer_LastName" />
+		<property name="customergender" length="15" column="Customer_gender" />
+		<property name="customerphone" length="15" column="Customer_Phone" />
+		<property name="customeremail" length="15" column="Customer_Email" />
+		<many-to-one name="address" class="com.online.spring.web.model.Address"
+			column="Customer_Address" not-null="true" cascade="All" unique="true"></many-to-one>
+	</class>
+</hibernate-mapping>
