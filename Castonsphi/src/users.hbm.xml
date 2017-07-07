@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC   
+ 		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ 			"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.online.web.spring.hibernate.entity.Users">
+		<id name="id" length="11" unsaved-value="0">
+			<generator class="increment"></generator>
+		</id>
+		<property name="user"/>
+		<property name="password"/>
+		<many-to-one name="invlocation"
+			class="com.online.web.spring.hibernate.entity.Inventry" cascade="all"
+			unique="true" />
+	</class>
+</hibernate-mapping>

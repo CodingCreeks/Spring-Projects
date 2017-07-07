@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="dname" class="com.online.spring.core.vehicle.Driver">
+		<property name="cardriver" value="Raju" />
+	</bean>
+
+	<bean id="vname" class="com.online.spring.core.vehicle.Vehicle"
+		autowire="byType">
+		<property name="car" value="BWM" />
+
+		<property name="driver" ref="dname" />
+
+	</bean>
+	<bean id="grocerylist" class="com.online.spring.core.person.GroceryList">
+		<property name="grocerylist">
+			<list>
+				<value>ABC</value>
+				<value>DEF</value>
+				<value>GHI</value>
+				<value>JKL</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="oname" class="com.online.spring.core.person.ShoppingOwner" autowire="byName">
+		<property name="ownername" value="xyz" />
+		<property name="grocerylist" ref="glist"/>
+	</bean>
+	
+	<bean id="shopper1" class="com.online.spring.core.shopping.SuperMarket">
+		<property name="walmart" value="WALMART" />
+		<property name="target" value="TARGET" />
+		<property name="sowner" ref="oname" />
+		<property name="vehicle" ref="vname" />
+	</bean>
+	<bean id="shopper-1" class="com.online.spring.core.shopping.SuperMarket">
+	
+	</bean>
+	
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+		<bean id="reg" class="com.online.spring.core.regions.Region">
+		<constructor-arg value="Bengalure"/>
+		<constructor-arg value="Karnataka"/>
+		</bean>
+		
+		<bean id="cmp" class="com.online.spring.core.Company">
+		<property name="cno" value="1234"/>
+		<property name="cdiv" value="Engineering"/>
+		<property name="cdep" value="Computer Science"/>
+		<!-- <constructor-arg ref="reg"/> -->
+		<property name="reg" ref="reg"/>
+		</bean>
+		
+		</beans>

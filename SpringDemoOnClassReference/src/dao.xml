@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+		<bean id="addr1" class="com.online.spring.address.reference.Address">
+		<property name="street" value="Peachstreet Dunwoody Road"/>
+		<property name="city" value="Atlanta"/>
+		<property name="state" value="Georgia"/>
+		<property name="country" value="USA"/>
+		<property name="pincode" value="30328"/>
+		</bean>
+		
+		<bean id="emp1" class="com.online.spring.employee.Employee">
+		<property name="eno" value="2001"/>
+		<property name="ename" value="Shankar Nag"/>
+		<property name="edesignation" value="Manager Operations"/>
+		<property name="egender" value="Male"/>
+		<property name="esalary" value="75000"/>
+		<property name="eusername" value="shakar"/>
+		<property name="epassword" value="1234"/>
+		<property name="address" ref="addr1"/>
+		</bean>
+		
+	<bean id="addr2" class="com.online.spring.address.reference.Address">
+		<constructor-arg value="Peachstreet Dunwoody Road"/>
+		<constructor-arg value="Atlanta"/>
+		<constructor-arg value="Georgia"/>
+		<constructor-arg value="USA"/>
+		<constructor-arg value="30328"/>
+		</bean> 
+		
+		<bean id="emp2" class="com.online.spring.employee.Employee">
+		<constructor-arg value="2002"/>
+		<constructor-arg value="Anantha Nag"/>
+		<constructor-arg value="Manager General"/>
+		<constructor-arg value="Male"/>
+		<constructor-arg value="85000"/>
+		<constructor-arg value="ananth"/>
+		<constructor-arg value="1234"/>
+		<constructor-arg name="address" ref="addr2"/>
+		</bean>
+		
+</beans>

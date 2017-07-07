@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC   
+ 		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ 			"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.online.hibernate.entity.Event">
+		<id name="eid" length="9">
+			<generator class="assigned"/>
+		</id>
+
+		<property name="etitle" />
+		<property name="elocation" />
+		
+		<list name="singers" cascade="all">
+			<key column="Event_Singers_ID" />
+			<index column="singerindex" />
+			<one-to-many class="com.online.hibernate.entity.Singers" />
+		</list>
+		
+	</class>
+</hibernate-mapping>

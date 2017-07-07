@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="mycar1" class="com.online.spring.core.model.Car">
+		<property name="cno" value="4524" />
+		<property name="cname" value="BMW2015" />
+	</bean>
+	<bean id="mycar2" class="com.online.spring.core.model.Car">
+		<property name="cno" value="24024" />
+		<property name="cname" value="Bajaj2015" />
+	</bean>
+	<bean id="listbean" class="com.online.spring.core.mycompany.Company">
+		<property name="listofstring">
+			<list>
+				<value>Shankar</value>
+				<value>Manju</value>
+				<value>ghi</value>
+				<value>jkl</value>
+				<value>mno</value>
+			</list>
+		</property>
+		<property name="carset">
+			<set>
+				<ref bean="mycar1" />
+				<ref bean="mycar2" />
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="xyz" value-ref="mycar1"></entry>
+			</map>
+		</property>
+		<property name="map1">
+			<map>
+				<entry key-ref="mycar2" value="999999"></entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

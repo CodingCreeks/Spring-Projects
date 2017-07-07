@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+	<bean class="com.online.demo.DAO" id="dao1">
+		<constructor-arg value="7000" />
+		<constructor-arg value="9000" />
+		<constructor-arg value="abcd" />
+	</bean>
+	
+	<bean class="com.online.demo.DAO" id="dao2">
+	<property name="i" value="100"/>
+	<property name="j" value="200"/>
+	<property name="str" value="ABCD"/>
+	</bean>
+</beans>

@@ -1,0 +1,117 @@
+/* .pager li > a:focus {
+  text-decoration: none;
+  background-color: orange;
+} */
+
+
+@import url(http://fonts.googleapis.com/css?family=Dosis:300,700|Ubuntu+Mono|Lato:300,400,700,300italic,400italic&subset=latin,latin-ext);
+body{
+	    font-family: Lato, Arial, sans-serif;
+}
+
+.form-inline .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.navbar {
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	border: none;
+}
+
+.nav-tabs > li > a {
+  border: none;
+}
+
+
+.breadcrumb {
+	margin-bottom: 0px;
+	border-bottom: 1px solid #ddd;
+}
+
+.jumbotron {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 25px;
+	padding-bottom: 0px;
+	background-color: #f8f8f8;
+	padding-top: 25px;
+}
+
+.badge {
+	background-color: orange;
+}
+
+footer {
+	margin: 0em;
+	padding: 2em;
+	border: none;
+	color: #999;
+	text-align: center;
+	background-color: #f8f8f8;
+}
+
+.breadcrumb>li+li:before {
+	padding: 0 15px;
+	color: #ccc;
+	content: none;
+}
+
+.form-horizontal .control-label {
+	text-align: left;
+}
+
+.nav-tabs {
+	padding-top: 25px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	/* border-bottom: none; */
+	color: #ccc;
+	cursor: default;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
+	{
+	padding-left: 0px;
+	background-color: #f8f8f8;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 4px solid orange;
+}
+
+.panel-heading {
+	margin: 0px;
+	padding: 0px;
+	background-color: #f8f8f8;
+	border: none;
+}
+
+.panel-body {
+	background-color: #ffffff;
+	/* border-top:none; */
+	margin-top: 0px;
+	padding: 30px;
+	height: auto;
+	border-top:none;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.panel-footer {
+	background-color: #ffffff;
+	margin: none;
+	padding: 0px;
+	border-top:none;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+/* <style type="text/css">
+.bs-example {
+  margin: 20px;
+} */

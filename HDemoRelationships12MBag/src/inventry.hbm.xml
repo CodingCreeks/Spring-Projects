@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC   
+ 		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ 			"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.online.hibernate.entity.Inventry">
+		<id name="inId" length="11">
+			<generator class="increment" />
+		</id>
+		<property name="inlocName" />
+		<bag name="products" cascade="all">
+			<key column="Inv_Pro_ID" />
+			<one-to-many class="com.online.hibernate.entity.Products" />
+		</bag>
+
+	</class>
+</hibernate-mapping>

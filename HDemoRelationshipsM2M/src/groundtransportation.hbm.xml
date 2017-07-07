@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC   
+ 		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ 			"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.online.hibernate.entity.Groundtransportation" table="gtrans">
+		<id name="gtid" length="9" column="GT_ID" unsaved-value="0">
+			<generator class="increment"/>
+		</id>
+		<property name="gtname"/>
+		<set name="passangers" table="gtpass" cascade="all">
+		<key column="gpk"></key>
+		<many-to-many column="ppk" class="com.online.hibernate.entity.Passangers"/>
+		</set>
+	</class>
+</hibernate-mapping>

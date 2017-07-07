@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC   
+ 		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ 			"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.online.web.spring.hibernate.entity.Invlocation">
+		<id name="id" length="11" unsaved-value="0">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="name" />
+		<property name="note" />
+		<list name="invproduct" cascade="all">
+			<key column="iloc_id"></key>
+			<index column="iproid"></index>
+			<one-to-many class="com.online.web.spring.hibernate.entity.Invproduct" />
+		</list>
+	</class>
+</hibernate-mapping>

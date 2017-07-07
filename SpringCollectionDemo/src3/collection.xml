@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="car1" class="com.online.spring.core.collection.Car">
+		<property name="cno" value="1234" />
+		<property name="cname" value="Audi" />
+	</bean>
+	<bean id="car2" class="com.online.spring.core.collection.Car">
+		<property name="cno" value="567" />
+		<property name="cname" value="BMW" />
+	</bean>
+	<bean id="car3" class="com.online.spring.core.collection.Car">
+		<property name="cno" value="890" />
+		<property name="cname" value="Benz" />
+	</bean>
+	<bean>
+	<constructor-arg>
+	<list>
+	
+	</list>
+	</constructor-arg>
+	
+	</bean>
+
+	<bean id="collectdata" class="com.online.spring.core.collection.Setlistdemo">
+		<property name="stringlist">
+			<list>
+				<value>ShankarNag</value>
+				<value>AnathNag</value>
+				<value>ArudhathiNag</value>
+				<value>SivaNag</value>
+			</list>
+		</property>
+		<property name="carset">
+			<set>
+				<ref bean="car1" />
+				<ref bean="car2" />
+				<ref bean="car3" />
+			</set>
+		</property>
+		<property name="mymap">
+		<map>
+		<entry key="one" value-ref="car1"/>
+		<entry key="Two" value-ref="car2"/>
+		<entry key="Three" value-ref="car3"/>
+		</map>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC   
+ 		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ 			"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.online.web.spring.hibernate.entity.Invproduct">
+
+		<id name="id" length="11" unsaved-value="0">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		<property name="price"></property>
+		<property name="mfg"></property>
+		<property name="model"></property>
+		<property name="ymfg"></property>
+		
+		<bag name="vendordetails" cascade="all">
+			<key column="pv_id"></key>
+			<one-to-many class="com.online.web.spring.hibernate.entity.Vendordetails" />
+		</bag>
+		
+	</class>
+</hibernate-mapping>
